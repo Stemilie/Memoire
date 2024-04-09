@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulaire d'inscription</title>
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.1/css/font-awesome.css">
+</head>
+<body>
+    <h1>Inscrivez_Vous</h1>
+<form class="inscription-form" action="{% url 'inscription' %}" method="post">
+    {% csrf_token %}
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom" required>
+    
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
+    
+    <label for="date-naissance">Date de naissance :</label>
+    <input type="date" id="date-naissance" name="date-naissance" required>
+    
+    <label for="matricule">Matricule :</label>
+    <input type="text" id="matricule" name="matricule" required>
+    
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="mot-de-passe">Mot de passe :</label>
+    <input type="password" id="mot-de-passe" name="mot-de-passe" required>
+    <label for="confirmer-mot-de-passe">Confirmer mot de passe :</label>
+    <input type="password" id="confirmer-mot-de-passe" name="confirmer-mot-de-passe" required>
+    <div class="connexion-buttons">
+        
+        <button onclick="window.location.href='/home/'">creer un compte</button>
+    </div>
+    
+</form>
+
+
+</body>
+</html>
